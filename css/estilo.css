@@ -1,0 +1,1255 @@
+/* =========================================================
+   WORLD OF SWITCH
+   CSS - ESTILO GAMER INSPIRADO NA NINTENDO
+   ========================================================= */
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #171717;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* =========================
+   CORES
+   ========================= */
+
+:root {
+    --vermelho: #e60012;
+    --vermelho-escuro: #b8000e;
+    --vermelho-claro: #ff3043;
+
+    --preto: #111111;
+    --preto-2: #1c1c1c;
+
+    --branco: #ffffff;
+    --cinza: #f5f5f5;
+    --cinza-2: #dddddd;
+
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+header {
+    background: var(--vermelho);
+    color: var(--branco);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo h1 {
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MENU
+   ========================= */
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.menu li a {
+    display: block;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    padding: 10px 15px;
+
+    border-radius: 999px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.menu li a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+.menu li a.active {
+    background: white;
+    color: var(--vermelho);
+}
+
+
+/* =========================
+   BOTÃO DARK MODE
+   ========================= */
+
+#darkMode {
+    border: none;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: white;
+    color: var(--preto);
+
+    font-size: 1.1rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+#darkMode:hover {
+    transform: rotate(15deg) scale(1.08);
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    min-height: 650px;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(230, 0, 18, 0.12),
+            transparent 35%
+        ),
+        #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 8%;
+
+    gap: 50px;
+}
+
+
+/* TEXTO DO HERO */
+
+.hero-text {
+    max-width: 600px;
+}
+
+.subtitle {
+    color: var(--vermelho);
+    font-size: 0.9rem;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+
+    line-height: 0.9;
+
+    font-weight: 1000;
+
+    letter-spacing: -5px;
+
+    color: var(--preto);
+}
+
+.hero h2 span {
+    color: var(--vermelho);
+}
+
+.hero-text > p:not(.subtitle) {
+    margin-top: 30px;
+
+    max-width: 500px;
+
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* IMAGEM HERO */
+
+.hero-image {
+    width: 45%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 550px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.2));
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMAÇÃO
+   ========================= */
+
+@keyframes flutuar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    background: var(--vermelho);
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    font-weight: 900;
+
+    border: 3px solid var(--vermelho);
+
+    box-shadow: 0 8px 0 var(--vermelho-escuro);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.btn:hover {
+    background: var(--vermelho-claro);
+
+    transform: translateY(3px);
+
+    box-shadow: 0 4px 0 var(--vermelho-escuro);
+}
+
+.btn:active {
+    transform: translateY(7px);
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   SEÇÕES
+   ========================= */
+
+.destaques,
+.vantagens,
+.produtos,
+.sobre {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 90px 0;
+}
+
+.destaques > h2,
+.vantagens > h2,
+.produtos > h2 {
+    text-align: center;
+
+    font-size: 2.5rem;
+    font-weight: 1000;
+
+    margin-bottom: 10px;
+}
+
+.descricao {
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.17);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+
+    margin: 20px 0 10px;
+}
+
+.card p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+/* BOTÃO DOS CARDS */
+
+.card-btn {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    background: var(--preto);
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: background 0.2s ease;
+}
+
+.card-btn:hover {
+    background: var(--vermelho);
+}
+
+
+/* =========================
+   VANTAGENS
+   ========================= */
+
+.vantagens {
+    max-width: none;
+
+    width: 100%;
+
+    padding-left: 8%;
+    padding-right: 8%;
+
+    background: var(--preto);
+
+    color: white;
+}
+
+.vantagens-container {
+    max-width: 1250px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.vantagem {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 18px;
+
+    background: #202020;
+
+    transition: transform 0.25s ease;
+}
+
+.vantagem:hover {
+    transform: translateY(-8px);
+}
+
+.vantagem span {
+    font-size: 2.5rem;
+}
+
+.vantagem h3 {
+    margin: 15px 0 8px;
+}
+
+.vantagem p {
+    color: #bbb;
+}
+
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta {
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background: var(--vermelho);
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+
+    font-weight: 1000;
+
+    line-height: 1;
+}
+
+.cta p {
+    margin-top: 15px;
+}
+
+.cta .btn {
+    background: white;
+
+    color: var(--vermelho);
+
+    border-color: white;
+
+    box-shadow: 0 8px 0 #a9000d;
+}
+
+.cta .btn:hover {
+    background: #f1f1f1;
+}
+
+
+/* =========================
+   CABEÇALHO DAS PÁGINAS
+   ========================= */
+
+.pagina-header {
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--vermelho),
+            #a9000d
+        );
+
+    color: white;
+}
+
+.pagina-header h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    font-weight: 1000;
+
+    line-height: 1;
+}
+
+.pagina-header p {
+    margin-top: 15px;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   SOBRE
+   ========================= */
+
+.sobre {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+
+    font-weight: 1000;
+}
+
+.sobre-texto p {
+    color: #555;
+
+    margin-bottom: 20px;
+}
+
+.sobre-imagem {
+    flex: 1;
+
+    text-align: center;
+}
+
+.sobre-imagem img {
+    max-width: 100%;
+
+    width: 500px;
+
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
+}
+
+
+/* =========================
+   MISSÃO / VISÃO / VALORES
+   ========================= */
+
+.missao {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 90px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.info-card {
+    background: white;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow: var(--sombra);
+
+    border-top: 6px solid var(--vermelho);
+}
+
+.info-card span {
+    font-size: 2.5rem;
+}
+
+.info-card h2 {
+    margin: 15px 0;
+}
+
+.info-card p {
+    color: #666;
+}
+
+
+/* =========================
+   PRODUTOS
+   ========================= */
+
+.produtos {
+    padding-top: 70px;
+}
+
+.produtos > h2 {
+    text-align: left;
+
+    font-size: 2rem;
+
+    margin-bottom: 35px;
+
+    border-left: 7px solid var(--vermelho);
+
+    padding-left: 15px;
+}
+
+.produtos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.produto {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--sombra);
+
+    text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.produto:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.17);
+}
+
+.produto img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+}
+
+.produto h3 {
+    font-size: 1.4rem;
+
+    margin-bottom: 10px;
+}
+
+.produto p {
+    color: #666;
+
+    min-height: 70px;
+}
+
+.produto strong {
+    display: block;
+
+    font-size: 1.3rem;
+
+    color: var(--vermelho);
+
+    margin: 20px 0;
+}
+
+
+/* BOTÃO PRODUTO */
+
+.produto-btn {
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 999px;
+
+    background: var(--vermelho);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.produto-btn:hover {
+    background: var(--vermelho-escuro);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   CONTATO
+   ========================= */
+
+.contato-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 50px;
+}
+
+.contato-info,
+.contato-form {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--sombra);
+}
+
+.contato-info h2,
+.contato-form h2 {
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+.contato-info > p {
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+.contato-item {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    align-items: flex-start;
+}
+
+.contato-item span {
+    font-size: 1.7rem;
+}
+
+.contato-item h3 {
+    margin-bottom: 3px;
+}
+
+.contato-item p {
+    color: #666;
+}
+
+
+/* =========================
+   FORMULÁRIO
+   ========================= */
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid var(--cinza-2);
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--vermelho);
+
+    box-shadow:
+        0 0 0 3px rgba(230, 0, 18, 0.12);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+#mensagemForm {
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   VOLTAR AO TOPO
+   ========================= */
+
+#voltarTopo {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--vermelho);
+
+    color: white;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: var(--sombra);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+#voltarTopo.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+#voltarTopo:hover {
+    background: var(--vermelho-escuro);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer {
+    background: #0d0d0d;
+
+    color: white;
+
+    padding-top: 60px;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+.footer-content h3 {
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+.footer-content p {
+    color: #aaa;
+}
+
+.footer-content a {
+    display: block;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    margin-bottom: 8px;
+
+    transition: color 0.2s ease;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid #292929;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.copyright p {
+    color: #777;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        padding: 15px 0;
+    }
+
+    .menu {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+    .hero-text {
+        max-width: 800px;
+    }
+
+    .hero-text > p:not(.subtitle) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        width: 80%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vantagens-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre {
+        flex-direction: column;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .missao {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        width: 92%;
+    }
+
+    .logo h1 {
+        font-size: 1.05rem;
+    }
+
+    .menu {
+        gap: 2px;
+    }
+
+    .menu li a {
+        padding: 8px 10px;
+
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 70px 6%;
+    }
+
+    .hero h2 {
+        font-size: 3.5rem;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .destaques,
+    .vantagens,
+    .produtos,
+    .sobre {
+        width: 90%;
+
+        padding: 60px 0;
+    }
+
+    .cards,
+    .vantagens-container,
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destaques > h2,
+    .vantagens > h2 {
+        font-size: 2rem;
+    }
+
+    .produtos > h2 {
+        font-size: 1.6rem;
+    }
+
+    .pagina-header {
+        padding: 70px 20px;
+    }
+
+    .pagina-header h2 {
+        font-size: 2.8rem;
+    }
+
+    .sobre-texto h2 {
+        font-size: 2.3rem;
+    }
+
+    .contato-container {
+        width: 90%;
+
+        padding: 60px 0;
+    }
+
+    .contato-info,
+    .contato-form {
+        padding: 25px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .cta {
+        padding: 75px 20px;
+    }
+
+    .cta h2 {
+        font-size: 2.4rem;
+    }
+
+}
+
+
+/* =========================
+   DARK MODE
+   ========================= */
+
+body.dark-mode {
+    background: #111111;
+
+    color: white;
+}
+
+body.dark-mode .hero {
+    background: #171717;
+}
+
+body.dark-mode .hero h2 {
+    color: white;
+}
+
+body.dark-mode .hero-text > p:not(.subtitle),
+body.dark-mode .descricao {
+    color: #bbb;
+}
+
+body.dark-mode .card,
+body.dark-mode .produto,
+body.dark-mode .info-card,
+body.dark-mode .contato-info,
+body.dark-mode .contato-form {
+    background: #202020;
+
+    color: white;
+}
+
+body.dark-mode .card p,
+body.dark-mode .produto p,
+body.dark-mode .info-card p,
+body.dark-mode .contato-info > p,
+body.dark-mode .contato-item p {
+    color: #aaa;
+}
+
+body.dark-mode .campo input,
+body.dark-mode .campo textarea {
+    background: #111111;
+
+    color: white;
+
+    border-color: #444;
+}
+
+body.dark-mode .sobre-texto p {
+    color: #aaa;
+}
+
+body.dark-mode #darkMode {
+    background: #222;
+
+    color: white;
+}
